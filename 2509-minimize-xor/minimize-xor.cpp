@@ -11,11 +11,11 @@ class Solution {
 
 // Function return type is bool since any non-zero is always true .
 //eventually being bool type it modifies and return an integer 
-    bool setBit(int &x,int &bitpos){
+    int setBit(int &x,int &bitpos){
         return x|=(1<<bitpos);
     }
 
-    bool unset(int &x,int &bitpos){
+    int unset(int &x,int &bitpos){
         return x&= ~(1<<bitpos);
     }
 
