@@ -17,11 +17,11 @@ public:
                 int y2 = points[j][1];
 
                 if(x2-x1==0){
-                    mp[INT_MAX]++;
+                    mp[INT_MAX]++; //When line is parallel to the Y-Axis and Slope is Infinite or not defined type 
 
                 }
                 else if(y2-y1==0){
-                    mp[0]++;
+                    mp[0]++; //When two points on the line are oparallel to the X-axis
                 }
                 else{
                     float slope = (float)(x2-x1)/(y2-y1);
