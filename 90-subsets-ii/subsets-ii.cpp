@@ -9,15 +9,19 @@ void func(int i, vector<int>&v,vector<vector<int>>&ans,vector<int>&nums){
     v.push_back(nums[i]);
     func(i+1,v,ans,nums);
     v.pop_back();
-    for(int j=i+1;j<nums.size();j++){
-        if(nums[j]!=nums[i]){
-            func(j,v,ans,nums);
-            return;
-        }
-    }
+    // for(int j=i+1;j<nums.size();j++){
+    //     if(nums[j]!=nums[i]){
+    //         func(j,v,ans,nums);
+    //         return;
+    //     }
+    // }
+
+    auto it = upper_bound(nums.begin(),nums.end(),nums[i]);
+    int level = it - nums.begin();
+    func(level,v,ans,nums);
 
     // Adding this bcz in case of example like 1 2 2 2 the return will not happen and we have to add it to the ansso we will call the recursion on base case 
-    func(nums.size(), v, ans, nums);
+    // func(nums.size(), v, ans, nums);
 
 }
     vector<vector<int> > subsetsWithDup(vector<int>& nums) {
