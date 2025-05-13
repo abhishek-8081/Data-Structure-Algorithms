@@ -22,7 +22,7 @@ public:
                     temp[1]=(temp[1]+freq)%MOD;
                 }
             }
-            mp =temp;
+            mp =move(temp);
         }
         
     int sum = 0;
